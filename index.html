@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Joana AI — Aprende Inglês</title>
+  <meta name="description" content="Joana AI — A tua Professora de Inglês com IA"/>
+  <meta name="theme-color" content="#0f3d2e"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===== SPLASH (Doc 12 design) ===== -->
+<div id="splash" class="splash">
+  <div class="splash-atm">
+    <div class="atm-blob top-right"></div>
+    <div class="atm-blob bot-left"></div>
+  </div>
+  <div class="splash-pulse-wrap">
+    <div class="pulse-ring pr1"></div>
+    <div class="pulse-ring pr2"></div>
+    <div class="pulse-ring pr3"></div>
+    <div class="splash-core floating">
+      <div class="splash-avatar-ring">
+        <img src="https://lh3.googleusercontent.com/aida/ADBb0uii84uLMvElZ4bwr9kbvp4LVfyXYihVsd7n1JVvDPsPODbsr2ZcO2DUjXiuawFtVAeXNZRFk8Z8So8rE63ykgjl2F1nkkfdjZ6q8Xem9AxxifKN-XJdP9HzTd62wW6Lj7j9iv_MzkosL3kiSEMkItHyoOM4TKVsQvtk3iUOAelSCrjwusDt0Qyr95lA9G7GWqtJfO-H4zVLG1w5F8vwLPTjj31xA_G4N9XPtSPHkhpxqgWRuuDV8yY4RfA" alt="Joana AI"/>
+      </div>
+    </div>
+    <div class="splash-status-badge"><span class="status-dot"></span>AI CORE ACTIVE</div>
+  </div>
+  <div class="splash-text fade-up">
+    <div class="splash-tagline">Inovação Radical</div>
+    <h1 class="splash-headline">Bem-vindo ao<br/>teu futuro</h1>
+    <p class="splash-sub">Sou a <strong>Joana</strong>, a tua mentora digital de Inglês com IA</p>
+  </div>
+  <div class="splash-cta fade-up">
+    <div class="splash-stat-row">
+      <div class="sstat"><b>99.9%</b><small>PRECISÃO</small></div>
+      <div class="sstat bx"><b>24/7</b><small>SUPORTE</small></div>
+      <div class="sstat"><b>IA</b><small>AVANÇADA</small></div>
+    </div>
+  </div>
+  <div class="splash-sig">Bráulio Aurélio</div>
+</div>
+
+<!-- ===== APP ===== -->
+<div id="app" class="app hidden">
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <div class="tb-brand">
+      <div class="tb-avatar-wrap">
+        <img class="tb-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN9kfZ8G1bJDzqyMYP05gLMe6VNTLI8Ou8HTUVjv5SzDoZvTnQKfrUGn4UJHX5hOINIQcMh_SEenQ-Gs2U2mJQ5IzIklivoNLQ3hLgDJuRxcjKjxQZtSg4D2k4dyAe0Bk_tPO3rtiUofB62aEfVIeKUt0oSpXSwp19QCICTy9CduR4tgTZC-ymwztfc3CmWcMiHqaHndYnGVY7V52ENfdXY1PWiph4n0dKPh19zvUc_x8JFyV44-PpNBV5QsL_xMb_9hb8HzU5F9s" alt="Joana AI"/>
+        <span class="tb-online"></span>
+      </div>
+      <div>
+        <span class="tb-name">Joana AI</span>
+        <span class="tb-status"><span class="pulse-dot"></span>Online</span>
+      </div>
+    </div>
+    <div class="tb-right">
+      <!-- Assinatura topo esquerdo em baixo da marca (visível mas discreta) -->
+      <span class="tb-sig">Bráulio Aurélio</span>
+      <div class="streak-pill"><span class="ms filled">local_fire_department</span><b id="streakCount">0</b></div>
+    </div>
+  </header>
+
+  <!-- PAGES -->
+  <main class="pages">
+
+    <!-- ===== PAGE: HOME ===== -->
+    <section class="page active" id="page-home">
+
+      <!-- Hero (Doc 12 style) -->
+      <div class="hero-section">
+        <div class="hero-left">
+          <div class="hero-tagline">Inovação Radical</div>
+          <h2 class="hero-title" id="heroGreeting">Olá! Bem-vindo 👋</h2>
+          <p class="hero-desc">Aprende Inglês com a Joana — uma IA que fala, corrige e ensina como uma professora real, disponível 24/7.</p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="goPage('aulas',document.querySelector('[data-page=aulas]'))">
+              Começar Agora <span class="ms">arrow_forward</span>
+            </button>
+            <button class="btn-outline" onclick="goPage('aulas',document.querySelector('[data-page=aulas]'))">
+              Ver Lições
+            </button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-pulse-wrap">
+            <div class="hpulse hp1"></div>
+            <div class="hpulse hp2"></div>
+            <img class="hero-robot floating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN9kfZ8G1bJDzqyMYP05gLMe6VNTLI8Ou8HTUVjv5SzDoZvTnQKfrUGn4UJHX5hOINIQcMh_SEenQ-Gs2U2mJQ5IzIklivoNLQ3hLgDJuRxcjKjxQZtSg4D2k4dyAe0Bk_tPO3rtiUofB62aEfVIeKUt0oSpXSwp19QCICTy9CduR4tgTZC-ymwztfc3CmWcMiHqaHndYnGVY7V52ENfdXY1PWiph4n0dKPh19zvUc_x8JFyV44-PpNBV5QsL_xMb_9hb8HzU5F9s" alt="Joana AI Robot"/>
+            <div class="hero-chip hc-top"><span class="ms">translate</span> Hi, I'm Joana!</div>
+            <div class="hero-chip hc-bot"><span class="ms filled" style="color:#22c55e">check_circle</span> Perfect!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- XP Progress -->
+      <div class="xp-bar-section">
+        <div class="xp-labels"><span>Nível <b id="userLevel">1</b></span><span id="xpText">0 / 100 XP</span></div>
+        <div class="xp-track"><div class="xp-fill" id="xpFill"></div></div>
+      </div>
+
+      <!-- Bento Goals + Next -->
+      <div class="bento-row">
+        <div class="bento-goal glass-card">
+          <div class="bg-hd"><span class="sec-lbl">Meta Diária</span><span class="pct-badge" id="goalPct">0%</span></div>
+          <div class="goal-track"><div class="goal-fill" id="goalBar"></div></div>
+          <div class="goal-stats">
+            <div class="gst"><span class="ms filled" style="color:#f97316">local_fire_department</span><b id="bStreak">0</b><small>Dias</small></div>
+            <div class="gst"><span class="ms filled" style="color:#286a50">workspace_premium</span><b id="bXP">0</b><small>XP</small></div>
+            <div class="gst"><span class="ms">bolt</span><b>Nv <span id="bLevel">1</span></b><small>Nível</small></div>
+          </div>
+        </div>
+        <div class="bento-next glass-card" onclick="goPage('aulas',document.querySelector('[data-page=aulas]'))">
+          <span class="sec-lbl" style="color:rgba(190,237,215,.7)">Próxima Lição</span>
+          <p class="next-title" id="nextLessonTitle">Vogais em Inglês</p>
+          <button class="next-btn"><span class="ms">play_arrow</span>Começar</button>
+          <span class="ms bento-bg-icon">school</span>
+        </div>
+      </div>
+
+      <!-- Practice Cards (Doc 13) -->
+      <div class="sh">🎯 Modos de Prática</div>
+      <div class="prac-grid">
+        <div class="pcard glass-card" onclick="startQuiz('vocab')">
+          <div class="pc-icon-wrap"><span class="ms">menu_book</span></div>
+          <div class="pc-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" stroke="#adf1d0" stroke-width="3" fill="none"/><circle cx="18" cy="18" r="14" stroke="#286a50" stroke-width="3" fill="none" stroke-dasharray="87.96" stroke-dashoffset="21.99" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg><span>75%</span></div>
+          <h3>Vocabulário</h3><p>Expanda seu léxico</p>
+          <button class="pc-btn">Começar</button>
+        </div>
+        <div class="pcard glass-card" onclick="startQuiz('listen')">
+          <div class="pc-icon-wrap"><span class="ms">hearing</span></div>
+          <div class="pc-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" stroke="#adf1d0" stroke-width="3" fill="none"/><circle cx="18" cy="18" r="14" stroke="#286a50" stroke-width="3" fill="none" stroke-dasharray="87.96" stroke-dashoffset="52.78" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg><span>40%</span></div>
+          <h3>Listening</h3><p>Compreensão auditiva</p>
+          <button class="pc-btn outline">Retomar</button>
+        </div>
+        <div class="pcard glass-card" onclick="startQuiz('translate')">
+          <div class="pc-icon-wrap"><span class="ms">translate</span></div>
+          <div class="pc-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" stroke="#adf1d0" stroke-width="3" fill="none"/><circle cx="18" cy="18" r="14" stroke="#286a50" stroke-width="3" fill="none" stroke-dasharray="87.96" stroke-dashoffset="8.8" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg><span>90%</span></div>
+          <h3>Tradução</h3><p>PT ↔ EN avançado</p>
+          <button class="pc-btn outline">Revisar</button>
+        </div>
+        <div class="pcard glass-card" onclick="startQuiz('spell')">
+          <div class="pc-icon-wrap"><span class="ms">graphic_eq</span></div>
+          <div class="pc-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" stroke="#adf1d0" stroke-width="3" fill="none"/><circle cx="18" cy="18" r="14" stroke="#286a50" stroke-width="3" fill="none" stroke-dasharray="87.96" stroke-dashoffset="70.37" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg><span>20%</span></div>
+          <h3>Pronúncia</h3><p>Fonética avançada</p>
+          <button class="pc-btn outline">Explorar</button>
+        </div>
+      </div>
+
+      <!-- AI Debate Banner (Doc 13) -->
+      <div class="debate-banner">
+        <div class="debate-left">
+          <div class="debate-live"><span class="live-dot"></span>AO VIVO AGORA</div>
+          <h3 class="debate-title">AI Debate Club</h3>
+          <p class="debate-desc">Debate temas globais com moderação por IA. Melhora o teu raciocínio rápido hoje.</p>
+          <div class="debate-btns">
+            <button class="btn-secondary" onclick="goPage('chat',document.querySelector('[data-page=chat]'))">Participar Agora</button>
+            <button class="btn-outline-white">Ver Programação</button>
+          </div>
+        </div>
+        <div class="debate-right">
+          <div class="debate-fade"></div>
+          <img class="debate-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMw91xiqiBiQ3LtH4K2a4Yco6S8I1S9ZIfrv1RcUlNmVrMKw_pVJmdUluUc1J260eGK8_rGlVMdgX75cD-QY0m9GPeOo-j-pp_w0Om3Nzt40j6qF5pAVjORp6JS6vPBePrplfMtj32U3CpSmlT0A2YryOLV34QEwuWW2bVnnSRRu7MY4Jd_p2TB-LvgWXhvgMGndVTrL_bbKw1Ztn2czeEFkmAxt3cX3IIkA_P2cW2NsE0E3zi6K7KzohaZA5Osry7olgDl59ZsDU" alt="Debate Arena"/>
+        </div>
+      </div>
+
+      <!-- Weekly Activity Chart (Doc 13) -->
+      <div class="sh">📊 Atividade Semanal</div>
+      <div class="activity-row glass-card">
+        <div class="act-chart">
+          <div class="act-bars" id="actBars">
+            <div class="act-bar-wrap"><div class="act-bar" style="height:40%"></div><span>S</span></div>
+            <div class="act-bar-wrap"><div class="act-bar" style="height:60%"></div><span>T</span></div>
+            <div class="act-bar-wrap"><div class="act-bar" style="height:30%"></div><span>Q</span></div>
+            <div class="act-bar-wrap"><div class="act-bar ab-active" style="height:80%"></div><span>Q</span></div>
+            <div class="act-bar-wrap"><div class="act-bar" style="height:50%"></div><span>S</span></div>
+            <div class="act-bar-wrap"><div class="act-bar" style="height:90%"></div><span>S</span></div>
+            <div class="act-bar-wrap"><div class="act-bar" style="height:20%"></div><span>D</span></div>
+          </div>
+        </div>
+        <div class="act-tip glass-card">
+          <span class="ms" style="color:#286a50;font-size:28px">lightbulb</span>
+          <b>Dica da Joana</b>
+          <p id="joanaHomeTip">"Pratica vocabulário hoje para subir de nível mais rápido!"</p>
+          <button class="btn-secondary sm" onclick="goPage('chat',document.querySelector('[data-page=chat]'))">Aceitar Desafio</button>
+        </div>
+      </div>
+
+      <!-- Lições grid -->
+      <div class="sh">📚 Lições</div>
+      <div class="lessons-grid" id="lessonsGrid"></div>
+
+      <!-- Conquistas -->
+      <div class="sh">🏆 Conquistas</div>
+      <div class="badges-row" id="achievementsRow"></div>
+
+      <!-- Analytics Banner (Doc 16) -->
+      <div class="sh">📈 Análise de Inteligência</div>
+      <div class="analytics-card glass-card">
+        <div class="ana-hd">
+          <h3>Análise Semanal IA</h3>
+          <span class="ana-period">Esta semana</span>
+        </div>
+        <div class="ana-chart">
+          <svg viewBox="0 0 300 70" preserveAspectRatio="none">
+            <path d="M0 60 Q40 55,80 40 T160 20 T240 8 T300 2" fill="none" stroke="#286a50" stroke-width="2.5"/>
+            <circle cx="80" cy="40" r="3" fill="#286a50"/>
+            <circle cx="160" cy="20" r="3" fill="#286a50"/>
+            <circle cx="240" cy="8" r="3" fill="#286a50"/>
+          </svg>
+          <div class="ana-labels"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span><span>DOM</span></div>
+        </div>
+        <div class="ana-stats">
+          <div class="ana-stat glass-card"><small>Engajamento</small><b>+24%</b></div>
+          <div class="ana-stat glass-card"><small>Tempo Fala</small><b>4.2h</b></div>
+          <div class="ana-stat glass-card"><small>Vocabulário</small><b>76%</b></div>
+        </div>
+      </div>
+
+      <!-- Workspace Banner (Doc 16) -->
+      <div class="ws-banner">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHX-8N2LJTUbxltIAqJ39MqFRYekkaP64GP8Qi9ybxc0nyc85MmOwPrQ1o1TmB4pCgAPZmwoz0iFXulwSrd6tNuyipeldcxlOKyevkGUSDJ5S-QkEG0K-7iJRNh-i8KbtxquTZEsKcnGQEv8ruVWcJNMkjG1oRPEAVC2yX5QczcjbWUkAwKYj29PQCTmccyGSw6EB83cs-HU-V_Bs_XoSpv-EnRZnfrTyPKgudec7Cwetrw2uRdGmXsf8lRDE2JgjKvN-eJAY4h7g" alt="Workspace"/>
+        <div class="ws-overlay"></div>
+        <div class="ws-text"><h3>Mergulha no Conhecimento</h3><p>A fluência é a tua ferramenta para desbloquear o potencial global.</p></div>
+      </div>
+
+      <div class="page-sig">Bráulio Aurélio<small>Criador</small></div>
+    </section>
+
+    <!-- ===== PAGE: AULAS ===== -->
+    <section class="page" id="page-aulas">
+      <div class="page-hd">
+        <button class="back-btn hidden" id="backBtn" onclick="showLevelsList()"><span class="ms">arrow_back</span></button>
+        <h2 class="page-title" id="aulasTitle">Lições</h2>
+      </div>
+      <!-- Analytics mini (Doc 16) -->
+      <div class="mini-ana glass-card">
+        <div class="mana-left">
+          <div class="mana-chart">
+            <svg viewBox="0 0 200 50" preserveAspectRatio="none">
+              <path d="M0 45 Q40 40,80 25 T160 10 T200 3" fill="none" stroke="#286a50" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="mana-stats">
+            <div class="mana-stat"><small>Engajamento</small><b>+24%</b></div>
+            <div class="mana-stat"><small>Fala</small><b>4.2h</b></div>
+          </div>
+        </div>
+        <div class="lexical-gauge">
+          <svg viewBox="0 0 80 80" style="transform:rotate(-90deg)">
+            <circle cx="40" cy="40" r="30" fill="transparent" stroke="#f0f5f3" stroke-width="6"/>
+            <circle cx="40" cy="40" r="30" fill="transparent" stroke="#145A41" stroke-width="6" stroke-dasharray="188.4" stroke-dashoffset="45" stroke-linecap="round"/>
+          </svg>
+          <div class="gauge-label"><span>76%</span><small>Léxico</small></div>
+        </div>
+      </div>
+      <div id="levelsView"><div class="levels-list" id="levelsList"></div></div>
+      <div id="lessonView" class="hidden"><div id="lessonContent"></div></div>
+      <div class="page-sig">Bráulio Aurélio<small>Criador</small></div>
+    </section>
+
+    <!-- ===== PAGE: CHAT (Doc 14) ===== -->
+    <section class="page" id="page-chat">
+      <div class="page-hd">
+        <div class="chat-hd-left">
+          <img class="chat-hd-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkYtunzI1G9Lf5sJc9AnLhukVf4DxE9k9JWK1t5i5P3sVRCAjuBaoUXN5tfIKDzOo0_XYAlQT5U8mmBdFWdclxz8_H7P5OVWc_FFQt8cnkebtLKmHQ5wbP7Ga8i1nwr0U3MsXcyPkk6rgartXsR5F9eKDKt9gkx6R39qc874NVemqphkQ2x5aVQlDlWe6FK1i6_tumEmVX9Az_e-9u_eaejMUv6Omiwrl1ogvSzh32SJf9hwhvki52N7fIsD-CiOZJwTBG1hUPxfo" alt="Joana"/>
+          <div>
+            <h2 class="page-title">Joana AI</h2>
+            <span class="tb-status"><span class="pulse-dot"></span>Online · PT/EN</span>
+          </div>
+        </div>
+        <div class="chat-toggle-wrap">
+          <span class="ctw-lbl">PT/EN</span>
+          <button class="ctw-btn" id="langToggle" onclick="toggleLang()"><span class="ctw-dot"></span></button>
+        </div>
+      </div>
+      <div class="chat-msgs" id="fullChatMessages">
+        <div class="chat-date">Hoje</div>
+      </div>
+      <!-- Voice wave (Doc 14) -->
+      <div class="voice-wave-bar-row" id="voiceWaveRow">
+        <div class="vwb" style="animation-delay:.1s"></div>
+        <div class="vwb" style="animation-delay:.3s"></div>
+        <div class="vwb" style="animation-delay:.2s"></div>
+        <div class="vwb" style="animation-delay:.4s"></div>
+        <div class="vwb" style="animation-delay:.15s"></div>
+        <div class="vwb" style="animation-delay:.25s"></div>
+        <div class="vwb" style="animation-delay:.5s"></div>
+        <div class="vwb" style="animation-delay:.35s"></div>
+        <div class="vwb" style="animation-delay:.45s"></div>
+        <div class="vwb" style="animation-delay:.1s"></div>
+      </div>
+      <div class="chat-input-wrap">
+        <div class="chat-input-row">
+          <button class="ci-icon" onclick="startVoiceInput('full')"><span class="ms">keyboard</span></button>
+          <div class="ci-field">
+            <input type="text" id="fullChatInput" placeholder="Escreve ou fala com a Joana..." autocomplete="off"/>
+            <span class="ms ci-mic-icon filled">mic</span>
+          </div>
+          <button class="ci-voice" id="fullVoiceBtn" onclick="startVoiceInput('full')"><span class="ms filled">mic</span></button>
+          <button class="ci-send" onclick="sendFullChat()"><span class="ms filled">send</span></button>
+        </div>
+      </div>
+      <div class="page-sig" style="margin-bottom:4px">Bráulio Aurélio<small>Criador</small></div>
+    </section>
+
+    <!-- ===== PAGE: PERFIL (Doc 15 design) ===== -->
+    <section class="page" id="page-perfil">
+      <div class="page-hd"><h2 class="page-title">A Tua Evolução</h2></div>
+
+      <!-- Fluency main card (Doc 15) -->
+      <div class="evo-main-card glass-card">
+        <div class="emc-top">
+          <div>
+            <span class="emc-label">Nível de Fluência</span>
+            <div class="emc-pct" id="perfFluency">0%</div>
+          </div>
+          <span class="ms" style="color:#286a50;font-size:26px">analytics</span>
+        </div>
+        <div class="emc-bar-wrap">
+          <div class="emc-bar-fill" id="perfFluencyBar"></div>
+        </div>
+        <div class="emc-note">Próximo Marco: Fluência Avançada (85%) · <b style="color:#286a50">+2.4% este mês</b></div>
+        <div class="emc-sub">
+          <div><small>Pronúncia</small><b id="pfPron">0%</b></div>
+          <div class="bx"><small>Gramática</small><b id="pfGram">0%</b></div>
+          <div><small>Escuta</small><b id="pfEsc">0%</b></div>
+        </div>
+      </div>
+
+      <!-- Stats cards (Doc 15) -->
+      <div class="perf-stats-row">
+        <div class="psr-card glass-card"><div class="psr-icon fire"><span class="ms filled">local_fire_department</span></div><small>Ofensiva</small><b id="pStreak">0 Dias</b></div>
+        <div class="psr-card glass-card"><div class="psr-icon book"><span class="ms">menu_book</span></div><small>Palavras</small><b id="pWords">0</b></div>
+        <div class="psr-card glass-card"><div class="psr-icon time"><span class="ms">timer</span></div><small>XP Total</small><b id="pXP">0</b></div>
+      </div>
+
+      <!-- Evolution bar chart (Doc 15) -->
+      <div class="evo-chart-card glass-card">
+        <div class="ecc-hd"><h3>Curva de Evolução</h3><div class="ecc-tabs"><button class="ecc-tab active">Semanal</button><button class="ecc-tab">Mensal</button></div></div>
+        <div class="evo-bars">
+          <div class="evo-b-wrap"><div class="evo-b" style="height:40%"></div><span>Seg</span></div>
+          <div class="evo-b-wrap"><div class="evo-b" style="height:65%"></div><span>Ter</span></div>
+          <div class="evo-b-wrap"><div class="evo-b" style="height:55%"></div><span>Qua</span></div>
+          <div class="evo-b-wrap"><div class="evo-b eb-active" style="height:85%"></div><span style="font-weight:700;color:#286a50">Qui</span></div>
+          <div class="evo-b-wrap"><div class="evo-b" style="height:70%"></div><span>Sex</span></div>
+          <div class="evo-b-wrap"><div class="evo-b" style="height:30%"></div><span>Sáb</span></div>
+          <div class="evo-b-wrap"><div class="evo-b" style="height:20%"></div><span>Dom</span></div>
+        </div>
+      </div>
+
+      <!-- Insight cards (Doc 15) -->
+      <div class="insight-cards">
+        <div class="insight-card glass-card">
+          <div class="ic-ico green"><span class="ms">lightbulb</span></div>
+          <div><b>Dica da Joana</b><p id="joanaInsight">Pratica vocabulário hoje para subir de nível mais rápido!</p>
+          <button class="ic-link" onclick="goPage('chat',document.querySelector('[data-page=chat]'))">Praticar agora <span class="ms">arrow_forward</span></button></div>
+        </div>
+        <div class="insight-card glass-card">
+          <div class="ic-ico gold"><span class="ms">military_tech</span></div>
+          <div><b>Próxima Conquista</b><p id="nextAch">Completa mais lições!</p>
+          <div class="ic-bar-wrap"><div class="ic-bar-fill" id="nextAchBar"></div></div></div>
+        </div>
+      </div>
+
+      <!-- AI Robot profile card (Doc 15) -->
+      <div class="profile-robot-card glass-card">
+        <img class="prc-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYLUKoeyGFF64rvug-axN0dksdx3fZTN-3WNCATihI1VWsDi7OrQiBJoHWkBs8aWuNSFk7UYCHHu77DL4vvwbhjO65bYbe9WcD8OPTMgdDWkK1zTIYdcqSHBMUr3X7PhgK148SCjqKelrLqoFlTk-0XwsOmMLpaFb7F3MBsO75zWZD9HBphuhsvez7FTmxqGLPuHJCJ1DBbTX_NA1B26mpccq98DIfZ7337ZHQRyQqNCGIl4KtdvLYsJ0V9mljuL259DG1QfMKF0o" alt="Joana AI Mentor"/>
+        <div class="prc-text">
+          <span class="prc-name" id="profileName">Estudante</span>
+          <div class="prc-level-badge">B<span id="profileLevel">1</span></div>
+          <span class="prc-role">Nível <span id="pRoleLvl">1</span> · Aprendiz de Inglês</span>
+        </div>
+        <button class="prc-edit" onclick="editName()"><span class="ms">edit</span></button>
+      </div>
+
+      <!-- Conquistas -->
+      <div class="sh">🏅 Conquistas</div>
+      <div class="badges-row" id="profileBadges"></div>
+
+      <!-- Next Steps (Doc 16) -->
+      <div class="sh">🚀 Próximos Passos</div>
+      <div class="next-steps-grid">
+        <div class="ns-card glass-card" onclick="startQuiz('vocab')">
+          <div class="ns-ico"><span class="ms">record_voice_over</span></div>
+          <h4>Refinar Pronúncia</h4><p>A Joana detectou áreas a melhorar nos teus sons.</p>
+          <div class="ns-footer"><small>12 min</small><button class="ns-play"><span class="ms filled">play_arrow</span></button></div>
+        </div>
+        <div class="ns-card glass-card" onclick="startQuiz('translate')">
+          <div class="ns-ico"><span class="ms">psychology</span></div>
+          <h4>Conectivos Lógicos</h4><p>Expande o teu leque de transições em Inglês.</p>
+          <div class="ns-footer"><small>15 min</small><button class="ns-play"><span class="ms filled">play_arrow</span></button></div>
+        </div>
+        <div class="ns-card glass-card recom" onclick="goPage('chat',document.querySelector('[data-page=chat]'))">
+          <span class="ns-rec-badge">Recomendado</span>
+          <div class="ns-ico dark"><span class="ms">forum</span></div>
+          <h4>Simulação de Negócios</h4><p>Pratica negociação com a IA da Joana.</p>
+          <div class="ns-footer"><small>20 min</small><button class="ns-play dark"><span class="ms filled">play_arrow</span></button></div>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="sh">⚙️ Configurações</div>
+      <div class="settings-list">
+        <button class="sett-item" onclick="editName()"><span class="ms">person</span><span>Alterar nome</span><span class="ms">chevron_right</span></button>
+        <button class="sett-item" onclick="toggleVoice()"><span class="ms">volume_up</span><span>Voz: <b id="voiceToggle">Ativada</b></span><span class="ms">chevron_right</span></button>
+        <button class="sett-item" onclick="resetProgress()"><span class="ms">refresh</span><span>Reiniciar progresso</span><span class="ms">chevron_right</span></button>
+        <button class="sett-item sett-danger" onclick="resetProgress()"><span class="ms">logout</span><span>Limpar dados</span></button>
+      </div>
+      <div class="page-sig">Bráulio Aurélio<small>Criador</small></div>
+    </section>
+
+  </main>
+
+  <!-- ===== FLOATING JOANA FAB (todas as páginas) ===== -->
+  <button class="joana-fab" id="joanaFab" onclick="toggleFloatChat()">
+    <div class="fab-ring fr1"></div>
+    <div class="fab-ring fr2"></div>
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN9kfZ8G1bJDzqyMYP05gLMe6VNTLI8Ou8HTUVjv5SzDoZvTnQKfrUGn4UJHX5hOINIQcMh_SEenQ-Gs2U2mJQ5IzIklivoNLQ3hLgDJuRxcjKjxQZtSg4D2k4dyAe0Bk_tPO3rtiUofB62aEfVIeKUt0oSpXSwp19QCICTy9CduR4tgTZC-ymwztfc3CmWcMiHqaHndYnGVY7V52ENfdXY1PWiph4n0dKPh19zvUc_x8JFyV44-PpNBV5QsL_xMb_9hb8HzU5F9s" alt="Joana"/>
+    <span class="fab-online-dot"></span>
+  </button>
+
+  <!-- ===== FLOAT CHAT PANEL ===== -->
+  <div class="float-panel hidden" id="floatChat">
+    <div class="fp-header">
+      <div class="fp-hd-left">
+        <img class="fp-hd-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN9kfZ8G1bJDzqyMYP05gLMe6VNTLI8Ou8HTUVjv5SzDoZvTnQKfrUGn4UJHX5hOINIQcMh_SEenQ-Gs2U2mJQ5IzIklivoNLQ3hLgDJuRxcjKjxQZtSg4D2k4dyAe0Bk_tPO3rtiUofB62aEfVIeKUt0oSpXSwp19QCICTy9CduR4tgTZC-ymwztfc3CmWcMiHqaHndYnGVY7V52ENfdXY1PWiph4n0dKPh19zvUc_x8JFyV44-PpNBV5QsL_xMb_9hb8HzU5F9s" alt="Joana"/>
+        <div><b>Joana AI</b><span><span class="pulse-dot"></span>Online</span></div>
+      </div>
+      <button class="fp-close" onclick="toggleFloatChat()"><span class="ms">close</span></button>
+    </div>
+    <div class="fp-msgs" id="floatMsgs"></div>
+    <div class="fp-input-row">
+      <input type="text" id="floatInput" placeholder="Fala ou escreve aqui..." autocomplete="off"/>
+      <button class="fp-mic" id="floatMicBtn" onclick="startVoiceInput('float')"><span class="ms">mic</span></button>
+      <button class="fp-send" onclick="sendFloatChat()"><span class="ms filled">send</span></button>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-page="home" onclick="goPage('home',this)">
+      <span class="ms filled">home</span><small>Início</small>
+    </button>
+    <button class="nav-btn" data-page="aulas" onclick="goPage('aulas',this)">
+      <span class="ms">auto_stories</span><small>Lições</small>
+    </button>
+    <button class="nav-btn" data-page="chat" onclick="goPage('chat',this)">
+      <span class="ms">chat_bubble</span><small>Chat</small>
+    </button>
+    <button class="nav-btn" data-page="perfil" onclick="goPage('perfil',this)">
+      <span class="ms">person</span><small>Perfil</small>
+    </button>
+  </nav>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><span class="ms">close</span></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- FEEDBACK TRAY -->
+<div id="feedbackTray" class="feedback-tray hidden">
+  <div id="feedbackInner" class="feedback-inner">
+    <div class="fb-left">
+      <div class="fb-icon" id="fbIcon"></div>
+      <div><b id="fbTitle"></b><p id="fbMsg"></p></div>
+    </div>
+    <button class="fb-continue" onclick="nextQuestion()">Continuar</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
